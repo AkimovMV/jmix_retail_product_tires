@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="APPLYING" type="VARCHAR(150)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="APPLYING" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="2" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="AXIS" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="AXIS" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="3" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="AXIS_ID_1C" type="INT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="AXIS_ID_1C" defaultNullValue="0" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="4" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="DATE_UPDATE" type="DATETIME"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="DATE_UPDATE" defaultNullValue="now" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="5" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="HAS_RIM_TAPE" type="BOOLEAN"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="HAS_RIM_TAPE" defaultNullValue="false" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="6" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="HAS_TUBE" type="BOOLEAN"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="HAS_TUBE" defaultNullValue="false" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="7" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="LAYER" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LAYER" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="8" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="LAYER_ID_1C" type="INT"/>
+            <column name="MODEL_ID_1C" type="INT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="9" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="LOAD_INDEX" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LOAD_INDEX" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="10" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="LOAD_INDEX_ID_1C" type="INT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LOAD_INDEX_ID_1C" defaultNullValue="0" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="11" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="MODEL" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="MODEL" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="12" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="OFF_ROAD" type="BOOLEAN"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="OFF_ROAD" defaultNullValue="false" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="13" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="OUTER_DIAMETER" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="OUTER_DIAMETER" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="14" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="OUTER_DIAMETER_ID_1C" type="INT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="OUTER_DIAMETER_ID_1C" defaultNullValue="0" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="15" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="PATTERN_TYPE" type="VARCHAR(255)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PATTERN_TYPE" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="16" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="PRODUCER" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PRODUCER" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="17" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="PRODUCER_ID_1C" type="INT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PRODUCER_ID_1C" defaultNullValue="0" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="18" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="RUN_FLAT" type="BOOLEAN"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="RUN_FLAT" defaultNullValue="false" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="19" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="TIRE_CONSTRUCTION" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="TIRE_CONSTRUCTION" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="20" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="TIRE_TYPE" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="TIRE_TYPE" defaultNullValue="''" tableName="TIRE"/>
+    </changeSet>
+    <changeSet id="21" author="retail-product-tires">
+        <addColumn tableName="TIRE">
+            <column name="WEIGHT" type="FLOAT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="WEIGHT" tableName="TIRE"/>
+    </changeSet>
+</databaseChangeLog>
