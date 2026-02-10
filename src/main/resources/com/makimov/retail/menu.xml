@@ -3,6 +3,8 @@
 
     <menu id="application" title="msg://com.makimov.retail/menu.application.title" opened="true">
         <item view="User.list" title="msg://com.makimov.retail.view.user/UserListView.title"/>
+        <item view="Warehouse.list" title="msg://com.makimov.retail.view.warehouse/warehouseListView.title"/>
+        <item view="Tire.list" title="msg://com.makimov.retail.view.tire/tireListView.title"/>
     </menu>
 
 </menu-config>
