@@ -83,9 +83,9 @@ public class Tire {
     @NotNull
     private String technology;
 
-    @Column(name = "SPEED_INDEX", nullable = false)
     @NotNull
-    private Integer speedIndex;
+    @Column(name = "SPEED_INDEX", nullable = false, length = 50)
+    private String speedIndex;
 
     @Column(name = "SPEED_INDEX_ID_1C", nullable = false)
     @NotNull
@@ -177,6 +177,14 @@ public class Tire {
     @Column(name = "APPLYING", nullable = false, length = 150)
     @NotNull
     private String applying;
+
+    public void setSpeedIndex(String speedIndex) {
+        this.speedIndex = speedIndex;
+    }
+
+    public String getSpeedIndex() {
+        return speedIndex;
+    }
 
     public String getApplying() {
         return applying;
@@ -360,14 +368,6 @@ public class Tire {
 
     public void setSpeedIndexId1c(Integer speedIndexId1c) {
         this.speedIndexId1c = speedIndexId1c;
-    }
-
-    public Integer getSpeedIndex() {
-        return speedIndex;
-    }
-
-    public void setSpeedIndex(Integer speedIndex) {
-        this.speedIndex = speedIndex;
     }
 
     public String getTechnology() {
