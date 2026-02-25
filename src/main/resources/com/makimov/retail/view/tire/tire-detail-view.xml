@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://tireDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="tireDc"
+                  class="com.makimov.retail.entity.Tire">
+            <fetchPlan extends="_base"/>
+            <loader id="tireDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveCloseAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <hbox id="detailActions">
+            <button id="saveAndCloseButton" action="saveCloseAction"/>
+            <button id="closeButton" action="closeAction"/>
+        </hbox>
+        <formLayout id="form" dataContainer="tireDc">
+            <responsiveSteps>
+                <responsiveStep minWidth="0" columns="1"/>
+                <responsiveStep minWidth="40em" columns="2"/>
+            </responsiveSteps>
+            <textField id="idField" property="id"/>
+            <textField id="nameField" property="name"/>
+            <textField id="producerArticleIdField" property="producerArticleId"/>
+            <textField id="widthField" property="width"/>
+            <textField id="widthId1cField" property="widthId1c"/>
+            <textField id="heightField" property="height"/>
+            <textField id="heightId1cField" property="heightId1c"/>
+            <textField id="diameterField" property="diameter"/>
+            <textField id="diameterId1cField" property="diameterId1c"/>
+            <textField id="diameterOutField" property="diameterOut"/>
+            <textField id="diameterOutId1cField" property="diameterOutId1c"/>
+            <textField id="seasonField" property="season"/>
+            <checkbox id="thornField" property="thorn"/>
+            <textField id="categoryField" property="category"/>
+            <textField id="categoryId1cField" property="categoryId1c"/>
+            <textField id="homologationField" property="homologation"/>
+            <textField id="technologyField" property="technology"/>
+            <textField id="speedIndexField" property="speedIndex"/>
+            <textField id="speedIndexId1cField" property="speedIndexId1c"/>
+            <textField id="loadIndexField" property="loadIndex"/>
+            <textField id="loadIndexId1cField" property="loadIndexId1c"/>
+            <textField id="axisField" property="axis"/>
+            <textField id="axisId1cField" property="axisId1c"/>
+            <textField id="layerField" property="layer"/>
+            <textField id="layerId1cField" property="layerId1c"/>
+            <textField id="producerField" property="producer"/>
+            <textField id="producerId1cField" property="producerId1c"/>
+            <textField id="modelField" property="model"/>
+            <textField id="modelId1cField" property="modelId1c"/>
+            <checkbox id="offRoadField" property="offRoad"/>
+            <checkbox id="hasTubeField" property="hasTube"/>
+            <checkbox id="runFlatField" property="runFlat"/>
+            <checkbox id="hasRimTapeField" property="hasRimTape"/>
+            <textField id="weightField" property="weight"/>
+            <dateTimePicker id="dateUpdateField" property="dateUpdate"/>
+            <textField id="outerDiameterField" property="outerDiameter"/>
+            <textField id="outerDiameterId1cField" property="outerDiameterId1c"/>
+            <textField id="tireTypeField" property="tireType"/>
+            <textField id="tireConstructionField" property="tireConstruction"/>
+            <textField id="patternTypeField" property="patternType"/>
+            <textField id="applyingField" property="applying"/>
+        </formLayout>
+
+    </layout>
+</view>

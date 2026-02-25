@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
-      title="msg://warehouseListView.title"
-      focusComponent="warehousesDataGrid">
+      title="msg://tireStockListView.title"
+      focusComponent="tireStocksDataGrid">
     <data>
-        <collection id="warehousesDc"
-                    class="com.makimov.retail.entity.Warehouse">
-            <fetchPlan extends="_base"/>
-            <loader id="warehousesDl" readOnly="true">
+        <collection id="tireStocksDc"
+                    class="com.makimov.retail.entity.TireStock">
+            <fetchPlan extends="_base">
+                <property name="tire" fetchPlan="_base"/>
+                <property name="warehouse" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="tireStocksDl" readOnly="true">
                 <query>
-                    <![CDATA[select e from Warehouse e]]>
+                    <![CDATA[select e from TireStock e]]>
                 </query>
             </loader>
         </collection>
@@ -27,24 +30,24 @@
     </actions>
     <layout>
         <genericFilter id="genericFilter"
-                       dataLoader="warehousesDl">
+                       dataLoader="tireStocksDl">
             <properties include=".*"/>
         </genericFilter>
         <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="loadingTireStocks" text="msg://loadingTireStocks.text"/>
             <startSlot>
-                <button id="loadingWarehouseButton" text="msg://loadingWarehouseButton.text"/>
-                <button id="createButton" action="warehousesDataGrid.createAction"/>
-                <button id="editButton" action="warehousesDataGrid.editAction"/>
-                <button id="removeButton" action="warehousesDataGrid.removeAction"/>
+                <button id="createButton" action="tireStocksDataGrid.createAction"/>
+                <button id="editButton" action="tireStocksDataGrid.editAction"/>
+                <button id="removeButton" action="tireStocksDataGrid.removeAction"/>
             </startSlot>
             <endSlot>
-                <simplePagination id="pagination" dataLoader="warehousesDl"/>
+                <simplePagination id="pagination" dataLoader="tireStocksDl"/>
             </endSlot>
         </hbox>
-        <dataGrid id="warehousesDataGrid"
+        <dataGrid id="tireStocksDataGrid"
                   width="100%"
                   minHeight="20em"
-                  dataContainer="warehousesDc"
+                  dataContainer="tireStocksDc"
                   columnReorderingAllowed="true">
             <actions>
                 <action id="createAction" type="list_create"/>
@@ -52,9 +55,10 @@
                 <action id="removeAction" type="list_remove"/>
             </actions>
             <columns resizable="true">
-                <column property="id"/>
-                <column property="id1c"/>
-                <column property="name"/>
+                <column property="tire"/>
+                <column property="warehouse"/>
+                <column property="count"/>
+                <column property="price"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">
