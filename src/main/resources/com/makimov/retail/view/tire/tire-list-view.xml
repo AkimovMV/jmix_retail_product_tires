@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://tireListView.title"
+      focusComponent="tiresDataGrid">
+    <data>
+        <collection id="tiresDc"
+                    class="com.makimov.retail.entity.Tire">
+            <fetchPlan extends="_base"/>
+            <loader id="tiresDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Tire e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="tiresDl">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="loadingButton" text="msg://loadingButton.text"/>
+            <startSlot>
+                <button id="createButton" action="tiresDataGrid.createAction"/>
+                <button id="editButton" action="tiresDataGrid.editAction"/>
+                <button id="removeButton" action="tiresDataGrid.removeAction"/>
+            </startSlot>
+            <endSlot>
+                <simplePagination id="pagination" dataLoader="tiresDl"/>
+            </endSlot>
+        </hbox>
+        <dataGrid id="tiresDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="tiresDc"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="createAction" type="list_create"/>
+                <action id="editAction" type="list_edit"/>
+                <action id="removeAction" type="list_remove"/>
+            </actions>
+            <columns resizable="true">
+                <column property="id"/>
+                <column property="name"/>
+                <column property="producerArticleId"/>
+                <column property="width"/>
+                <column property="widthId1c"/>
+                <column property="height"/>
+                <column property="heightId1c"/>
+                <column property="diameter"/>
+                <column property="diameterId1c"/>
+                <column property="diameterOut"/>
+                <column property="diameterOutId1c"/>
+                <column property="season"/>
+                <column property="thorn"/>
+                <column property="category"/>
+                <column property="categoryId1c"/>
+                <column property="homologation"/>
+                <column property="technology"/>
+                <column property="speedIndex"/>
+                <column property="speedIndexId1c"/>
+                <column property="loadIndex"/>
+                <column property="loadIndexId1c"/>
+                <column property="axis"/>
+                <column property="axisId1c"/>
+                <column property="layer"/>
+                <column property="layerId1c"/>
+                <column property="producer"/>
+                <column property="producerId1c"/>
+                <column property="model"/>
+                <column property="modelId1c"/>
+                <column property="offRoad"/>
+                <column property="hasTube"/>
+                <column property="runFlat"/>
+                <column property="hasRimTape"/>
+                <column property="weight"/>
+                <column property="dateUpdate"/>
+                <column property="outerDiameter"/>
+                <column property="outerDiameterId1c"/>
+                <column property="tireType"/>
+                <column property="tireConstruction"/>
+                <column property="patternType"/>
+                <column property="applying"/>
+            </columns>
+        </dataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>
